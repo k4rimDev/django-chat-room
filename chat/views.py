@@ -1,8 +1,14 @@
 from django.shortcuts import render
-
-def index(request):
-    return render(request)
+from django.http import HttpRequest, HttpResponse
 
 
-def room(request):
-    return None
+def index(request: HttpRequest) -> HttpResponse:
+    context = {}
+    return render(request, "index.html", context=context)
+
+
+def room(request: HttpRequest, room_name:str) -> HttpResponse:
+    context = {
+        "room_name": room_name
+    }
+    return render(request, "chatroom.html", context=context)
