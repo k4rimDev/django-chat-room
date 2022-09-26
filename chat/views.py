@@ -7,7 +7,7 @@ def index(request: HttpRequest) -> HttpResponse:
     return render(request, "index.html", context=context)
 
 
-def room(request: HttpRequest, room_name:str) -> HttpResponse:
+def room(request: HttpRequest, room_name: str) -> HttpResponse:
     context = {
         "room_name": room_name
     }
